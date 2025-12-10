@@ -24,29 +24,21 @@ Haha = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNMйцукенгшщз
 
 #1
 print("Задание 1.")
+
+def Check1(text):
+    while True:
+        try:
+            var = int(input(text))
+            if var > 0:
+                return var
+            else:
+                print("Попробуйте еще раз.")
+        except:
+            print("Попробуйте еще раз.")
+
 def Main1():
-    N = input("Введите натуральное число(N): ")
-    try:
-        N = int(N)
-    except:
-        print("Попробуйте еще раз.")
-        Main1()
-        return
-    if int(N) <= 0:
-        print("Попробуйте еще раз.")
-        Main1()
-        return
-    M = input("Введите натуральное число(M): ")
-    try:
-        M = int(M)
-    except:
-        print("Попробуйте еще раз.")
-        Main1()
-        return
-    if int(M) <= 0:
-        print("Попробуйте еще раз.")
-        Main1()
-        return
+    N = Check1("Введите натуральное число(N): ")
+    M = Check1("Введите натуральное число(M): ")
 
     list1 = [[random.randint(0,100) for _ in range(0, M)] for _ in range(0, N)]
     print("1. \n" + ShowMatrix(list1))
@@ -57,51 +49,24 @@ Main1()
 
 #2
 print("Задание 2.")
+
+def Check2(text):
+    while True:
+        try:
+            var = float(input(text))
+            return var
+        except:
+            print("Попробуйте еще раз.")
+
 def Main2():
     print("Введите числа для первого набора чисел:")
-    A1 = input("A1: ")
-    try:
-        A1 = float(A1)
-    except:
-        print("Попробуйте еще раз.")
-        Main2()
-        return
-    B1 = input("B1: ")
-    try:
-        B1 = float(B1)
-    except:
-        print("Попробуйте еще раз.")
-        Main2()
-        return
-    C1 = input("C1: ")
-    try:
-        C1 = float(C1)
-    except:
-        print("Попробуйте еще раз.")
-        Main2()
-        return
+    A1 = Check2("A1: ")
+    B1 = Check2("B1: ")
+    C1 = Check2("C1: ")
     print("Введите числа для второго набора чисел:")
-    A2 = input("A2: ")
-    try:
-        A2 = float(A2)
-    except:
-        print("Попробуйте еще раз.")
-        Main2()
-        return
-    B2 = input("B2: ")
-    try:
-        B2 = float(B2)
-    except:
-        print("Попробуйте еще раз.")
-        Main2()
-        return
-    C2 = input("C2: ")
-    try:
-        C2 = float(C2)
-    except:
-        print("Попробуйте еще раз.")
-        Main2()
-        return
+    A2 = Check2("A2: ")
+    B2 = Check2("B2: ")
+    C2 = Check2("C2: ")
 
     E1 = [A1, B1, C1]
     E2 = [A2, B2, C2]
